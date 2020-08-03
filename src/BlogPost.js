@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// are we missing an import?
+import Comment from './Comment.js'
 
-export default class BlogPost extends Component {
+class BlogPost extends Component {
   render() {
     
     const comments = [
@@ -18,12 +18,13 @@ export default class BlogPost extends Component {
         Still I'll rise.<br/>
         -Maya Angelou<br/>
 
-        {/* (remove the comment ticks and their surrounding brackets)
-        <Comment commentText={comments[0]} />
-        <Comment commentText={comments[0]} />
-        <Comment commentText={comments[0]} />
-        */}
+        {comments.map(comment => {
+          return <Comment commentText = {comment} />
+        })}
       </div>
     );
   }
 }
+
+
+export default BlogPost;
